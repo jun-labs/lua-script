@@ -12,7 +12,7 @@ Learning Lua
 
 [![Release](https://img.shields.io/badge/-🔵_Lua-blue)](https://www.lua.org/) [![Release](https://img.shields.io/badge/-📚_Documentation-brightgreen)](https://www.lua.org/docs.html) <br/>
 [![Release](https://img.shields.io/badge/🎉_Busted-lightblue)](https://github.com/lunarmodules/busted)
-[![Release](https://img.shields.io/badge/%E2%9C%A8%20LuaUnit-yellow)](https://www.tutorialspoint.com/lua/index.htm)
+[![Release](https://img.shields.io/badge/%E2%9C%A8%20LuaUnit-yellow)](https://www.tutorialspoint.com/lua/index.htm) [![Release](https://img.shields.io/badge/📌_Lua_Style_Guide-gray)](https://github.com/luarocks/lua-style-guide)
 </div>
 
 <br/><br/>
