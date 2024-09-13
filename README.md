@@ -46,3 +46,28 @@ services:
 ```shell
 $ docker-compose up -d
 ```
+
+<br/><br/><br/><br/>
+
+# Run
+
+To run the tests, navigate to the folder where your test file is located, and then enter the following command.
+
+```shell
+$ pwd                                   # 1. Current directory
+/lua-script/basic
+
+$ ls                                    # 2. Check directories
+chunk    string_library
+
+$ cd string_library                     # 3. Navigate to target directory
+
+$ lua test_luaunit.lua                  # 4. Execute test(luaunit)
+......
+Ran 6 tests in 0.000 seconds, 
+6 successes, 0 failures OK
+
+$ busted test_busted.lua                # 5. Execute test(busted)
+●●●●●●●●●●●
+11 successes / 0 failures / 0 errors / 0 pending : 0.005014 seconds
+```
