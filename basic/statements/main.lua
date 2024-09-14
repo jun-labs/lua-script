@@ -24,4 +24,8 @@ function M.getTablePairs(table)
     return result
 end
 
+function M.getType(value)
+    return type(value)
+end
+
 return M
