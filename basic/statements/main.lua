@@ -32,10 +32,11 @@ end
 
 function sumWithWhile(start, _end)
     local sum = 0
-    while (start < _end) do
+    while (start <= _end) do
         sum = sum + start
         start = start + 1
     end
+    return sum
 end
 
 function M.sumWithFor(start, _end)
