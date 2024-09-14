@@ -21,4 +21,29 @@ function TestPairs:testTablePairs()
     luaunit.assertEquals(main.getTablePairs(table), expected)
 end
 
+TestTypes = {}
+
+function TestTypes:testType()
+    local string = "A"
+    luaunit.assertEquals(main.getType(string), "string")
+
+    local _nil = nil
+    luaunit.assertEquals(main.getType(_nil), "nil")
+
+    local number = 1
+    luaunit.assertEquals(main.getType(number), "number")
+
+    local boolean = true
+    luaunit.assertEquals(main.getType(boolean), "boolean")
+
+    local table = {}
+    luaunit.assertEquals(main.getType(table), "table")
+
+    local func = function() end
+    luaunit.assertEquals(main.getType(func), "function")
+
+    local thread = coroutine.create(function() end)
+    luaunit.assertEquals(main.getType(thread), "thread")
+end
+
 os.exit(luaunit.LuaUnit.run())
