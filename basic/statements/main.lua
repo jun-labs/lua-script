@@ -1,5 +1,24 @@
 local M = {}
 
+function M.classifyAge(age)
+    if age < 0 then
+        goto error_label
+    end
+
+    if age < 13 then
+        return "child"
+    elseif age >= 13 and age < 20 then
+        return "teenager"
+    elseif age >= 20 and age < 65 then
+        return "adult"
+    else
+        return "senior"
+    end
+
+    :: error_label ::
+    return "Invalid age"
+end
+
 function M.getMin(x, y)
     if (x < y) then
         return x
@@ -30,8 +49,27 @@ function M.repeatUntilNotEmpty()
     return line
 end
 
+function M.repeatUntilNotEmptyControlStructures()
+    local line
+    :: repeat_start ::
+    repeat
+        line = io.read()
+    until line ~= ""
+    return line
+end
+
 function sumWithWhile(start, _end)
     local sum = 0
+    while (start <= _end) do
+        sum = sum + start
+        start = start + 1
+    end
+    return sum
+end
+
+function M.sumWithWhileControlStructures(start, _end)
+    local sum = 0
+    :: while_loop_start ::
     while (start <= _end) do
         sum = sum + start
         start = start + 1

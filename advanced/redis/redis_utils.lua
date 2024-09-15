@@ -94,11 +94,13 @@ function M.get_bit(client, key, offset)
 end
 
 function M.count_bits(client, key, start_index, end_index)
-    return client:bitcount(key, start_index, end_index)
+    local script = "return redis.call('bitcount', KEYS[1], ARGV[1], ARGV[2])"
+    return client:eval(script, 1, key, start_index, end_index)
 end
 
 function M.bitfield_operations(client, key, ...)
-    return client:bitfield(key, ...)
+    local script = "return redis.call('bitfield', KEYS[1], unpack(ARGV))"
+    return client:eval(script, 1, key, ...)
 end
 
 return M
