@@ -1,6 +1,16 @@
 local luaunit = require("luaunit")
 local main = require("main")
 
+TestAgeClassification = {}
+function TestAgeClassification:testAge()
+    luaunit.assertEquals(main.classifyAge(-5), "Invalid age")
+    luaunit.assertEquals(main.classifyAge(-1), "Invalid age")
+
+    luaunit.assertEquals(main.classifyAge(0), "child")
+    luaunit.assertEquals(main.classifyAge(5), "child")
+    luaunit.assertEquals(main.classifyAge(12), "child")
+end
+
 TestMin = {}
 function TestMin:testGetMin()
     luaunit.assertEquals(main.getMin(5, 10), 5)

@@ -1,6 +1,29 @@
 describe("M module tests", function()
     local main = require("main")
 
+    it("should return 'Invalid age' for negative age values", function()
+        assert.are.equal(main.classifyAge(-5), "Invalid age")
+        assert.are.equal(main.classifyAge(-1), "Invalid age")
+    end)
+
+    it("should return 'child' for age values below 13", function()
+        assert.are.equal(main.classifyAge(0), "child")
+        assert.are.equal(main.classifyAge(5), "child")
+        assert.are.equal(main.classifyAge(12), "child")
+    end)
+
+    it("should return 'teenager' for age values between 13 and 19", function()
+        assert.are.equal(main.classifyAge(13), "teenager")
+        assert.are.equal(main.classifyAge(15), "teenager")
+        assert.are.equal(main.classifyAge(19), "teenager")
+    end)
+
+    it("should return 'adult' for age values between 20 and 64", function()
+        assert.are.equal(main.classifyAge(20), "adult")
+        assert.are.equal(main.classifyAge(30), "adult")
+        assert.are.equal(main.classifyAge(64), "adult")
+    end)
+
     it("should return the minimum of two values", function()
         assert.are.equal(main.getMin(5, 10), 5)
         assert.are.equal(main.getMin(10, 5), 5)
